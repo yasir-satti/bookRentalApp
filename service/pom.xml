@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Project Identifiers
+Maven uses a set of identifiers, also called coordinates, to uniquely identify a project
+and specify how the project artifact should be packaged:
+
+groupId – a unique base name of the company or group that created the project
+artifactId – a unique name of the project
+version – a version of the project
+packaging – a packaging method (e.g. WAR/JAR/ZIP)
+
+The first three of these (groupId:artifactId:version) combine to form the unique identifier
+and are the mechanism by which you specify which versions of external libraries (e.g. JARs) your project will use.-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.6</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.project</groupId>
+    <artifactId>service</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>service</name>
+    <description>service</description>
+    <!--    Custom properties can help to make your pom.xml file easier to read
+    and maintain. In the classic use case, you would use custom properties to
+    define versions for your project's dependencies.-->
+    <properties>
+        <hamcrest-library.version>2.2</hamcrest-library.version>
+        <jakarta.validation-api.version>2.0.2</jakarta.validation-api.version>
+        <java.version>11</java.version>
+        <junit.version>4.13.2</junit.version>
+        <spring-context.version>5.3.12</spring-context.version>
+        <mybatis.version>3.5.7</mybatis.version>
+        <mybatis-spring.version>2.0.6</mybatis-spring.version>
+        <mysql-connector-java.version>8.0.26</mysql-connector-java.version>
+        <mybatis-spring-boot-starter.version>2.2.0</mybatis-spring-boot-starter.version>
+        <mybatis-spring-boot-starter-test.version>1.3.2</mybatis-spring-boot-starter-test.version>
+        <spring-context.version>5.3.12</spring-context.version>
+        <spring-test.version>5.3.12</spring-test.version>
+        <repackage.classifier/>
+        <!--        <spring-native.version>0.10.5</spring-native.version>-->
+        <!--        <module.name>org.mybatis.spring.boot.starter.test</module.name>-->
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
+    </properties>
+    <!--    These external libraries that a project uses are called dependencies. The dependency
+    management feature in Maven ensures automatic download of those libraries from a central repository-->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring-context.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis-spring-boot-starter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${mybatis-spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter-test</artifactId>
+            <version>${mybatis-spring-boot-starter-test.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
+            <version>${hamcrest-library.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring-test.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+            <version>${jakarta.validation-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-test-autoconfigure</artifactId>
+            <version>1.3.2</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+    <!--    build section is also a very important section of the Maven POM.
+    It provides information about the default Maven goal, the directory for
+    the compiled project, and the final name of the application.-->
+    <build>
+
+    </build>
+    <!--    A profile is basically a set of configuration values. By using
+    profiles, you can customize the build for different environments such as
+    Production/Test/Development:-->
+    <profiles>
+
+    </profiles>
+    <!--    A repository in Maven is used to hold build artifacts and dependencies
+    of varying types. The default local repository is located in the .m2/repository
+    folder under the home directory of the user.-->
+    <repositories>
+
+    </repositories>
+</project>

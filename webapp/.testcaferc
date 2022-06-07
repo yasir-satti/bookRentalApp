@@ -1,0 +1,13 @@
+{
+    "concurrency": 1,
+    "selectorTimeOut": 5000,
+    "assertionTimeOut": 5000,
+    "pageLoadTimeOut": 5000,
+    "screenshots": {
+        "path":  "./screenshots/",
+        "takeOnFails": true,
+        "fullPage": false
+    },
+    "videoPath": "./videos/",
+    "speed": 0.5
+}
